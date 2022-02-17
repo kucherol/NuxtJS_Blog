@@ -3,32 +3,16 @@
     <section class="intro">
       <h1>Get the latest news</h1>
     </section>
-    <section class="featured-posts">
-      <PostPreview
-        id='1'
-        title="Hello"
-        previewText='Hey There!'
-        thumbnail='yellow'/>
-      <PostPreview
-        id='1'
-        title="Hello"
-        previewText='Hey There!'
-        thumbnail='orange'/>
-      <PostPreview
-        id='1'
-        title="Hello"
-        previewText='Hey There!'
-        thumbnail='green'/>
-    </section>
+    <PostList />
   </div>
 </template>
 
 <script>
-import PostPreview from '@/components/posts/PostPreview.vue';
+import PostList from '@/components/posts/PostList.vue';
 
 export default {
   components: {
-    PostPreview,
+    PostList,
   },
 };
 </script>
