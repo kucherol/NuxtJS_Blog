@@ -1,45 +1,32 @@
 <template>
   <div class="home-page">
     <section class="intro">
-      <h1>Get the latest news</h1>
+      <h1>Get the latest tech news!</h1>
     </section>
-    <PostList :posts="loadedPosts"/>
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
 <script>
-import PostList from '@/components/posts/PostList.vue';
+import PostList from "@/components/Posts/PostList";
 
 export default {
   components: {
-    PostList,
+    PostList
   },
-  data() {
-    return {
-      loadedPosts: [
-        {
-          id: '1',
-          title: 'first post',
-          previewText: 'Lorem ipsum',
-          thumbnail: 'green',
-        },
-        {
-          id: '2',
-          title: 'Second post',
-          previewText: 'Lorem ipsum',
-          thumbnail: 'yellow',
-        },
-        {
-          id: '3',
-          title: 'Third post',
-          previewText: 'Lorem ipsum',
-          thumbnail: 'gray',
-        }
-      ]
-    };
-  },
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts
+    }
+  }
+  // data() {
+  //   return {
+  //     loadedPosts: []
+  //   };
+  // },
 };
 </script>
+
 
 <style scoped>
 .intro {
@@ -47,7 +34,7 @@ export default {
   position: relative;
   padding: 30px;
   box-sizing: border-box;
-  background-image: url('~assets/images/main-page-background.jpg');
+  background-image: url("~assets/images/main-page-background.jpg");
   background-position: center;
   background-size: cover;
 }

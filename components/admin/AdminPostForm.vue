@@ -1,5 +1,5 @@
 <template>
-   <form @submit.prevent="onSave">
+  <form @submit.prevent="onSave">
     <AppControlInput v-model="editedPost.author">Author Name</AppControlInput>
     <AppControlInput v-model="editedPost.title">Title</AppControlInput>
     <AppControlInput v-model="editedPost.thumbnailLink">Thumbnail Link</AppControlInput>
@@ -16,37 +16,41 @@
 </template>
 
 <script>
-import AppControlInput from '@/components/UI/AppControlInput.vue';
-import AppButton from '@/components/UI/AppButton.vue';
+import AppControlInput from "@/components/UI/AppControlInput";
+import AppButton from "@/components/UI/AppButton";
 
 export default {
   components: {
     AppControlInput,
-    AppButton,
-  },
-  data() {
-    return {
-      editedPost: this.post ? { ...this.post } : {
-        author: '',
-        title: '',
-        thumbnailLink: '',
-        content: '',
-      }
-    };
+    AppButton
   },
   props: {
     post: {
       type: Object,
-      required: false,
+      required: false
     }
+  },
+  data() {
+    return {
+      editedPost: this.post
+        ? { ...this.post }
+        : {
+            author: "",
+            title: "",
+            thumbnailLink: "",
+            content: ""
+          }
+    };
   },
   methods: {
     onSave() {
-
+      // Save the post
+      console.log(this.editedPost);
     },
     onCancel() {
-      this.$router.push('/admin');
-    },
-  },
-}
+      // Navigate back
+      this.$router.push("/admin");
+    }
+  }
+};
 </script>

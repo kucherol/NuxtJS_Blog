@@ -1,25 +1,26 @@
 <template>
   <div class="admin-post-page">
     <section class="update-form">
-      <AdminPostForm :post='loadedPost'/>
+      <AdminPostForm :post="loadedPost" />
     </section>
   </div>
 </template>
 
 <script>
-import AdminPostForm from '@/components/admin/AdminPostForm.vue';
+import AdminPostForm from '@/components/Admin/AdminPostForm'
 
 export default {
+  layout: 'admin',
   components: {
-    AdminPostForm,
+    AdminPostForm
   },
   data() {
     return {
       loadedPost: {
-        author: 'asd',
-        title: 'asdd',
-        content: 'asdasda',
-        thumbnail: 'grey',
+        author: 'Maximilian',
+        title: 'My awesome Post',
+        content: 'Super amazing, thanks for that!',
+        thumbnailLink: 'https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg'
       }
     }
   }
@@ -27,10 +28,11 @@ export default {
 </script>
 
 <style scoped>
- .update-form {
+.update-form {
   width: 90%;
   margin: 20px auto;
 }
+
 @media (min-width: 768px) {
   .update-form {
     width: 500px;

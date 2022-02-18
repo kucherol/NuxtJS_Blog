@@ -1,37 +1,39 @@
 <template>
   <section class="post-list">
     <PostPreview
-      v-for="post of posts"
+      v-for="post in posts"
       :key="post.id"
-      :id='post.id'
-      :is-admin='isAdmin'
+      :id="post.id"
+      :is-admin="isAdmin"
+      :thumbnail="post.thumbnail"
       :title="post.title"
-      :previewText='post.previewText'
-      :thumbnail='post.thumbnail'/>
+      :previewText="post.previewText" />
   </section>
 </template>
 
 <script>
-import PostPreview from '@/components/posts/PostPreview.vue';
+import PostPreview from '@/components/Posts/PostPreview'
 
 export default {
   components: {
-    PostPreview,
+    PostPreview
   },
   props: {
     isAdmin: {
       type: Boolean,
-      default: false,
+      default: false
     },
     posts: {
       type: Array,
-      required: true,
+      required: true
     }
   }
-};
+}
 </script>
 
+
 <style scoped>
+
 .post-list {
   display: flex;
   padding: 20px;
@@ -41,3 +43,4 @@ export default {
   justify-content: center;
 }
 </style>
+

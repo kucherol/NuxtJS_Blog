@@ -3,13 +3,13 @@
     <section class="post">
       <h1 class="post-title">{{ loadedPost.title }}</h1>
       <div class="post-details">
-        <div class="post-detail">Updated on {{ loadedPost.updatedDate }}</div>
-        <div class="post-detail">Written by: {{ loadedPost.author }}</div>
+        <div class="post-detail">Last updated on {{ loadedPost.updatedDate }}</div>
+        <div class="post-detail">Written by {{ loadedPost.author }}</div>
       </div>
-      <p class="post-content">Content of the post: {{ loadedPost.content }}</p>
+      <p class="post-content">{{ loadedPost.content }}</p>
     </section>
     <section class="post-feedback">
-      <p>Let me know what U think about my post</p>
+      <p>Let me know what you think about the post, send a mail to <a href="mailto:feedback@my-awesome-domain.com">feedback@my-awesome-domain.com</a>.</p>
     </section>
   </div>
 </template>
@@ -20,19 +20,21 @@ export default {
     setTimeout(() => {
       callback(null, {
         loadedPost: {
-          id: '3',
-          title: 'Third post',
-          previewText: 'Lorem ipsum',
-          thumbnail: 'gray',
-          author: 'qwe',
+          id: "1",
+          title: "First Post (ID: " + context.route.params.id + ")",
+          previewText: "This is our first post!",
+          author: 'Maximilian',
           updatedDate: new Date(),
-          content: 'asdaswqe'
+          content: 'Some dummy text which is definitely not the preview text though!',
+          thumbnail:
+            "https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg"
         }
-      })
-    } ,1000)
+      });
+    }, 1000);
   }
-}
+};
 </script>
+
 
 <style scoped>
 .single-post-page {

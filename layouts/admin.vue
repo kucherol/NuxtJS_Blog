@@ -4,10 +4,11 @@
   </div>
 </template>
 
-<style scoped>
+<style>
 html {
   font-family: 'Open Sans', sans-serif;
 }
+
 body {
   margin: 0;
 }

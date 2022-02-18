@@ -3,7 +3,7 @@
     <section class="new-post">
       <AppButton @click="$router.push('/admin/new-post')">Create Post</AppButton>
     </section>
-    <section class="existing-post">
+    <section class="existing-posts">
       <h1>Existing Posts</h1>
       <PostList isAdmin />
     </section>
@@ -11,15 +11,15 @@
 </template>
 
 <script>
-import PostList from '@/components/posts/PostList.vue';
-import AppButton from '@/components/UI/AppButton.vue';
+import PostList from '@/components/Posts/PostList'
+import AppButton from '@/components/UI/AppButton'
 
 export default {
   layout: 'admin',
   components: {
     PostList,
-    AppButton,
-  },
+    AppButton
+  }
 }
 </script>
 
@@ -38,3 +38,4 @@ export default {
   text-align: center;
 }
 </style>
+
